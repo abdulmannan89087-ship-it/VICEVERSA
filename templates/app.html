@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}ViceVersa - App{% endblock %}
+{% block content %}
+<header>
+    <div class="header-content">
+        <h1>ViceVersa</h1>
+        <div class="user-info">
+            <span>Welcome, {{ username }}!</span>
+            <a href="/logout" class="logout-btn">Logout</a>
+        </div>
+    </div>
+</header>
+
+<div class="app-container">
+    <div class="textarea-container">
+        <textarea id="main-textarea" placeholder="Start speaking or type here..."></textarea>
+        <div class="textarea-actions">
+            <button id="speak-btn" class="action-btn speak">🎤 Speak</button>
+            <button id="play-btn" class="action-btn play">🔊 Play</button>
+            <button id="clear-btn" class="action-btn clear">🗑️ Clear</button>
+            <button id="save-btn" class="action-btn save">💾 Save</button>
+        </div>
+    </div>
+
+    <div class="history-section">
+        <div class="history-header">
+            <h3>Recent History (Last 10)</h3>
+            <button id="history-btn" class="action-btn small">Refresh</button>
+        </div>
+        <div id="history-list" class="history-list">
+            <p>No history yet. Save some text!</p>
+        </div>
+    </div>
+</div>
+
+<div id="notification" class="notification"></div>
+{% endblock %}
